@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "PhoneNumberKit",
-        "repositoryURL": "https://github.com/marmelroy/PhoneNumberKit",
+        "repositoryURL": "https://github.com/jmbrocal/PhoneNumberKit",
         "state": {
-          "branch": null,
-          "revision": "c7d7b0c91ef0ad7e413022edfcf5d6f75561e2d5",
-          "version": "3.3.1"
+          "branch": "fix-resource-bundle-accessor",
+          "revision": "3f0f35b25f15b90ea98fc40f3033f3d9b83490f6",
+          "version": null
         }
       }
     ]
