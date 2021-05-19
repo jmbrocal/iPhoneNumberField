@@ -159,11 +159,23 @@ public struct iPhoneNumberField: UIViewRepresentable {
             uiView.partialFormatter.defaultRegion = defaultRegion
         }
         
+        updatePhoneNumberTextField(uiView)
+        
         return uiView
     }
 
     public func updateUIView(_ uiView: PhoneNumberTextField, context: UIViewRepresentableContext<Self>) {
         configuration(uiView)
+        updatePhoneNumberTextField(uiView)
+
+        if isFirstResponder {
+            uiView.becomeFirstResponder()
+        } else {
+            uiView.resignFirstResponder()
+        }
+    }
+    
+    private func updatePhoneNumberTextField(_ uiView: PhoneNumberTextField) {
         uiView.textContentType = .telephoneNumber //allow auto-fill to work with telephone text field
         uiView.text = displayedText
         uiView.font = font
@@ -196,12 +208,6 @@ public struct iPhoneNumberField: UIViewRepresentable {
             uiView.textAlignment = textAlignment
         }
 
-        if isFirstResponder {
-            uiView.becomeFirstResponder()
-        } else {
-            uiView.resignFirstResponder()
-        }
-        
         uiView.isUserInteractionEnabled = isUserInteractionEnabled
     }
 
