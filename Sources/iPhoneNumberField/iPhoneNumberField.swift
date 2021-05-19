@@ -201,6 +201,8 @@ public struct iPhoneNumberField: UIViewRepresentable {
         } else {
             uiView.resignFirstResponder()
         }
+        
+        uiView.isUserInteractionEnabled = isUserInteractionEnabled
     }
 
     public func makeCoordinator() -> Coordinator {
